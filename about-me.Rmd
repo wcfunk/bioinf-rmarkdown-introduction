@@ -1,12 +1,12 @@
 ---
 title: "About Me"
-author: "Insert Name Here"
+author: "Chris Funk"
 output:
-  html_document:
-    toc: yes
   word_document:
     toc: yes
   pdf_document:
+    toc: yes
+  html_document:
     toc: yes
 bibliography: references.bib
 editor_options: 
@@ -16,94 +16,118 @@ editor_options:
 
 # Who I am and where I came from
 
-First off, replace "Insert Name Here" in the YAML header with your name.
-It has to be surrounded by double quotation marks. Briefly tell us a
-little background about yourself, and how you ended up becoming a
-student at CSU and taking this class. Put in a hypertext link to your
-undergraduate institution.
+I grew up in Oregon where I was lucky enough to live on a forested hill, which allowed me to spend countless hours playing in the woods.
 
-Include a numbered list of your top-four favorite leisure activities,
-like this:
+I studied Biology at two colleges, first [Reed College](https://www.reed.edu/) and then [Wesleyan University](https://www.wesleyan.edu/). I ended up gaining expertise in evolutionary genetics from Dr. Fred Cohan at Wesleyan, and then Dr. Ron Burton at the Scripps Institute of Oceanography. 
 
-1.  My favorite
-2.  Second favorite
-3.  third favorite
-4.  fourth favorite
+My top four things to do when I'm not doing science are:
 
-Include a picture (jpg or png) of yourself, to get some practice in
-inserting images into RMarkdown. See the example to see how that can be
-done. Note that JPEGs that include EXIF information might be incorrectly
-rotated. That is OK if you can't figure out how to fix it.
+1. Trail running
+1. Snorkeling streams
+1. Backpacking
+1. Kayaking and just about anything else outdoors!
+
+Here's a picture of me snorkeling in an amazing pool in a stream in Oregon.
+
+![Chris snorkeling for stream amphibs in Cook Cr, OR](images/Chris_snorkeling.png)
 
 # Research Interests
 
-Brief description of your research interests.
+We strive to understand the evolutionary and ecological mechanisms that generate and maintain biological diversity using population genomics, experimental manipulations, and field studies. Our goal is to not only test basic evolutionary and ecological theory, but also directly inform policy and management decisions that will ultimately determine the fate of biodiversity.
 
 ## Influential papers
 
-Describe two papers that have been very influential in your research.
-The main purpose of this is learning how to cite literature in
-RMarkdown. You will have to add the citations to `references.bib` in
-BibTeX format, and then also cite them.
-
-An easy way to get the paper in BibTeX format is to find it on Google
-Scholar. Then, under the paper's link, click on the big fat quotation
-marks, and then choose the BibTex link at the bottom of the page. Then
-copy the contents into `references.bib`. For example you might paste
-this into `references.bib`.
-
-    @article{richardson1997bayesian,
-      title={On Bayesian analysis of mixtures with an unknown number of components (with discussion)},
-      author={Richardson, Sylvia and Green, Peter J},
-      journal={Journal of the Royal Statistical Society: series B (statistical methodology)},
-      volume={59},
-      number={4},
-      pages={731--792},
-      year={1997},
-      publisher={Wiley Online Library}
-    }
-
-Note the string before the comma on the first line. That is the cite
-key. Once you have done that, you can cite it by including
-`@richardson1997bayesian` if you don't want the name in parenthesis,
-like, "As @richardson1997bayesian introduced in their landmark paper."
-On the other hand, you can use `[@richardson1997bayesian]` if you do
-want it all in parentheses, like, "Reversible jump MCMC has been
-previously applied to the analysis of mixtures
-[@richardson1997bayesian]."
+A couple of papers that have shown me the power of genetics and genomics in conservation are @allendorf2010genomics and @slatkin1981estimating.
 
 ## The mathematics behind my research
 
-It is easy to write complex mathematics using a mathematical typesetting
-engine called TeX. Write two displayed equations that are relevant to
-your work. For a quick primer on TeX and LaTeX you can download [this
-cheatsheet](https://users.dickinson.edu/~richesod/latex/latexcheatsheet.pdf)
-and then fiddle with including things between the double dollar signs
-below: $$
-\cos\theta + i\sin\theta = e^{i\theta}
-$$ or here: $$
-\lim_{n\rightarrow \infty} \frac{1}{n}\sum_{i=1}^n X_i = EX
+Two equations relevant to my research:
+
+$$
+\Delta H = -\frac{1}{2N_e}
+$$
+
+$$
+F_{ST} = \frac{1}{4N_e m - 1}
 $$
 
 ## My computing experience
 
-Describe any experience you have with any programming languages. Include
-a snippet of code in two different languages using a non-evaluated code
-block. This can be something you have previously written, or, if you
-don't have any, then find and copy a few lines of code off the web.
+My experience with programming:
+
+* 8th grade: Learned how to program in LOGO in Mr. Delegan's class! LOGO was a teaching language that allowed students to write code for graphics. For my project, I wrote a program for a short video of a Seattle Seahawk NFL football player catching a football and then spiking it in the endzone!
+
+* First year of graduate school at the University of Montana: I wrote simulations in Turbopascal vs. 7.0 to estimate Ne using the temporal method from simulated populations of known Ne. These simulations were published in my first first-authored paper @funk1999small.
+
+* Rest of graduate school: I wrote lots of Matlab code for Population Viability Analyses as part of my dissertation research on the effects of dispersal on population dynamics.
+
+* Island fox project: I ran STACKS and custom scripts written by the Hohenlohe lab for a project on the evolutionary processes driving patterns of genetic variation in Channel Islands foxes.
+
+* I have always enjoyed the coding I have done, but have never had systematic training in computing or bioinformatics. It totally enjoyed this class two years ago, and got a lot out of it, but now need a refresher since I'm going to start doing a lot of WGS bioinformatics soon.
+
+Some snippets of non-evaluated code:
+
+Unix
+```{bash, eval=FALSE}
+ls *.Rmd
+```
+
+R
+```{r, eval=FALSE}
+# read in data
+pca.data <- read.csv("by_island_PCA_in_loci2001to2243_transposed.csv", header=FALSE)
+
+# take a look
+dim(pca.data)
+pca.data[1:10,1:10]
+
+# run the pca
+pcaout <- prcomp(pca.data, center=T, scale.=F)
+summary(pcaout)
+
+# view a quick biplot of PC1 and PC2
+plot(pcaout$x[,1],pcaout$x[,2], xlab = "PC 1", ylab = "PC 2")
+```
 
 ## What I hope to get out of this class
 
-Give me a bullet list of three things:
+My goal in taking this class is to:
 
--   This
--   That
--   Another
+* Learn a framework for conducting bioinformatic analyses. Although I have a solid grasp of pop gen theory, I didn't have any formal bioinformatics training before I took this class two years ago, as this field was not taught to us when I was a grad student.  
+* I want to have a solid foundation in bioinformatics and computational biology so that I can provide my students and postdocs with better guidance in their research.
+* And, I would like to be able to lead my own genomics papers now and then too! This course will provide with the skills I need to be able to do this. I'm planning to lead a monarch butterfly WGS over the next couple/few years.
+* Although it will likely take well into this year for my lab to collect WGS data (still have to hire the lab manager to do this), for now, I can play with the monarch reference genome and WGS data from this paper @talla2020monarchgenomics.
 
 # Evaluating some R code
 
-Here, please evaluate some R code to make a plot or a figure. The goal
-here is just to realize that you can imbed R code within fenced code
-blocks and get the output rendered into the document.
+Here's some R code stolen from the WWW to output an exponential plot:
+
+```{r, message=FALSE}
+
+A <- structure(list(Time = c(0, 1, 2, 4, 6, 8, 9, 10, 11, 12, 13, 
+14, 15, 16, 18, 19, 20, 21, 22, 24, 25, 26, 27, 28, 29, 30), 
+Counts = c(126.6, 101.8, 71.6, 101.6, 68.1, 62.9, 45.5, 41.9, 
+46.3, 34.1, 38.2, 41.7, 24.7, 41.5, 36.6, 19.6, 
+22.8, 29.6, 23.5, 15.3, 13.4, 26.8, 9.8, 18.8, 25.9, 19.3)), .Names = c("Time", "Counts"), row.names = c(1L, 2L,
+3L, 5L, 7L, 9L, 10L, 11L, 12L, 13L, 14L, 15L, 16L, 17L, 19L, 20L, 21L, 22L, 23L, 25L, 26L, 27L, 28L, 29L, 30L,
+31L), class = "data.frame")
+
+attach(A)
+
+names(A)
+
+exponential.model <- lm(log(Counts)~ Time)
+
+summary(exponential.model)
+
+timevalues <- seq(0, 30, 0.1)
+
+Counts.exponential2 <- exp(predict(exponential.model,list(Time = timevalues)))
+
+plot(Time, Counts,pch = 16)
+
+lines(timevalues, Counts.exponential2,lwd = 2, col = "red", xlab = "Time (s)", ylab = "Counts")
+
+```
 
 # Citations
