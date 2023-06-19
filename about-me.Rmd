@@ -2,11 +2,11 @@
 title: "About Me"
 author: "Chris Funk"
 output:
-  pdf_document:
+  html_document:
     toc: yes
   word_document:
     toc: yes
-  html_document:
+  pdf_document:
     toc: yes
 bibliography: references.bib
 editor_options: 
