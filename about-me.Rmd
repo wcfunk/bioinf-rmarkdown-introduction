@@ -2,9 +2,9 @@
 title: "About Me"
 author: "Chris Funk"
 output:
-  word_document:
-    toc: yes
   pdf_document:
+    toc: yes
+  word_document:
     toc: yes
   html_document:
     toc: yes
@@ -34,8 +34,7 @@ My top four things to do when I'm not doing science are:
 
 Here's a picture of me holding CGP3 at La Hacienda Águila.
 
-![Chris snorkeling for stream amphibs in Cook Cr,
-OR](images/Chris_holding_CGP3_2022_03_19.jpg)
+![Chris holding CGP3](images/Chris_holding_CGP3_2022_03_19.jpg)
 
 # Research Interests
 
