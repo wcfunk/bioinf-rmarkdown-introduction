@@ -4,9 +4,9 @@ author: "Chris Funk"
 output:
   word_document:
     toc: yes
-  pdf_document:
-    toc: yes
   html_document:
+    toc: yes
+  pdf_document:
     toc: yes
 bibliography: references.bib
 editor_options: 
@@ -29,7 +29,7 @@ My top four things to do when I'm not doing science are:
 
 Here's a picture of me snorkeling in an amazing pool in a stream in Oregon.
 
-![Chris snorkeling for stream amphibs in Cook Cr, OR](images/Chris_snorkeling.png)
+![Chris snorkeling for stream amphibs in Cook Cr, OR](images/Chris_holding_CGP3_2022_03_19.jpg)
 
 # Research Interests
 
